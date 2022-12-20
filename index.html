@@ -12,7 +12,27 @@
     />
   </head>
   <body class="bg-dark">
-    <div id="appTodolist"></div>
+    <div id="appTodolist">
+      <div class="form-control">
+        <!-- task list -->
+        <div
+          class="form-control d-flex justify-content-between align-items-center px-3"
+        >
+          <div class="single-task">{{taskList[refTask].text}}</div>
+          <div class="task-actions">
+            <button class="btn btn-success">&check;</button>
+            <button class="btn btn-outline-dark">&larr;</button>
+            <button class="btn btn-danger">&cross;</button>
+          </div>
+        </div>
+
+        <!-- type new task section -->
+        <div class="form-control d-flex justify-content-between">
+          <input class="form-control" type="text" placeholder="Add new task" />
+          <button class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/script.js"></script>
   </body>
