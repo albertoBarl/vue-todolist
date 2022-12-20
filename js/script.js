@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
       refTask: 0,
+      newTask: "",
       taskList: [
         { text: "Svegliarmi alle 5:30", done: false },
         { text: "Bere acqua", done: false },
@@ -14,6 +15,17 @@ createApp({
     };
   },
   methods: {
-    addTask(index) {},
+    addTask() {
+      let newObject = {
+        text: this.newTask,
+        done: false,
+      };
+
+      this.taskList.push(newObject);
+      this.newTask = "";
+    },
+    delTask(index) {
+      this.taskList.splice(index, 1);
+    },
   },
 }).mount("#appTodolist");

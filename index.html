@@ -29,15 +29,15 @@
           <div class="task-actions">
             <button class="btn btn-success m-1">&check;</button>
             <button class="btn btn-outline-dark m-1">&larr;</button>
-            <button class="btn btn-danger m-1">&cross;</button>
+            <button class="btn btn-danger m-1" @click="delTask">&cross;</button>
           </div>
         </li>
       </ul>
 
       <!-- type new task section -->
       <div class="d-flex pt-3">
-        <input class="form-control" type="text" placeholder="Add new task" />
-        <button class="btn btn-primary">Add</button>
+        <input class="form-control" type="text" placeholder="Add new task" v-model="newTask" />
+        <button class="btn btn-primary" @click="addTask">Add</button>
       </div>
 
       <!-- app end -->
