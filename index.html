@@ -18,19 +18,22 @@
       <div class="form-control">
       <!-- task list -->
       <ul class="my-3">
+        
         <li
           class="form-control list-unstyled d-flex justify-content-between align-items-center mb-3"
           v-for="(element, index) in taskList"
         >
-          <div>
+          <div :class="(element.done === true) ? 'text-decoration-line-through' : '' ">
             {{index + 1}} - {{taskList[index].text}}
           </div>
+
           <!-- buttons -->
           <div class="task-actions">
-            <button class="btn btn-success m-1">&check;</button>
+            <button class="btn btn-success m-1" @click="doneTask(index)">&check;</button>
             <button class="btn btn-outline-dark m-1">&larr;</button>
-            <button class="btn btn-danger m-1" @click="delTask">&cross;</button>
+            <button class="btn btn-danger m-1" @click="delTask(index)">&cross;</button>
           </div>
+
         </li>
       </ul>
 

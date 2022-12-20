@@ -27,5 +27,13 @@ createApp({
     delTask(index) {
       this.taskList.splice(index, 1);
     },
+    doneTask(index) {
+      const isDone = this.taskList[index].done;
+      if (isDone === false) {
+        this.taskList[index].done = true;
+      } else {
+        this.taskList[index].done = false;
+      }
+    },
   },
 }).mount("#appTodolist");
